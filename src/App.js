@@ -1,9 +1,8 @@
-import DocViewer from "react-doc-viewer";
-import React from 'react';
+import "./styles.css";
+import DocViewer, { DocViewerRenderers } from "react-doc-viewer";
 import xlsxFile from "./test-excelaki.xlsx";
 import docxFile from "./test-doc.docx";
-function App() {
-
+export default function App() {
   const docs = [
     // {
     //   uri:
@@ -19,8 +18,11 @@ function App() {
     { uri: xlsxFile },
     { uri: docxFile }
   ];
-  return <DocViewer documents={docs} />;
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
 
+      <DocViewer pluginRenderers={DocViewerRenderers} documents={docs} />
+    </div>
+  );
 }
-
-export default App;
